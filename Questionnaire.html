@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutrition and Academic Concentration Survey</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #e6f2ff, #ffffff); /* calm soft gradient */
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 850px;
+      background: #ffffff;
+      margin: 30px auto;
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    }
+    h2, h3 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    p {
+      text-align: justify;
+      color: #555;
+    }
+    section {
+      margin-top: 30px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-top: 15px;
+      color: #333;
+    }
+    select, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-top: 5px;
+      background-color: #f9f9f9;
+    }
+    .radio-group {
+      margin-top: 8px;
+    }
+    .radio-group label {
+      display: inline-block;
+      margin-right: 20px;
+      font-weight: normal;
+    }
+    button {
+      margin-top: 25px;
+      padding: 12px 18px;
+      background: #4a90e2; /* calm blue button */
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #357ABD; /* slightly darker on hover */
+    }
+    #msg {
+      text-align: center;
+      margin-top: 20px;
+      font-weight: 600;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Questionnaire on Nutrition and Academic Concentration</h2>
+    
+    <p>
+      Dear Respondent,<br><br>
+      My name is <b>Opeyemi Tolulope Joseph</b> a student of statistics Federal university Oye-Ekiti.<br><br>
+      This questionnaire is designed to collect information for a research project titled
+      <b>“Statistical Study on the Relationship Between Nutrition and Academic Concentration among University Students.”</b>
+      Your honest responses will be treated with strict confidentiality and used solely for academic purposes.<br><br>
+      Thank you for your cooperation.
+    </p>
+
+    <form id="surveyForm">
+      <!-- SECTION A -->
+      <section>
+        <h3>Section A: Demographic Information</h3>
+
+        <label>1. Name:</label>
+        <input type="text" name="name" placeholder="Enter your full name" required>
+
+        <label>2. Gender:</label>
+        <div class="radio-group">
+          <label><input type="radio" name="gender" value="Male" required> Male</label>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+        </div>
+
+        <label>3. Age:</label>
+        <select name="age" required>
+          <option value="">-- Select Age Range --</option>
+          <option>16–20</option>
+          <option>21–25</option>
+          <option>26–30</option>
+          <option>Above 30</option>
+        </select>
+
+        <label>4. Level of Study:</label>
+        <select name="level" required>
+          <option value="">-- Select Level --</option>
+          <option>100L</option>
+          <option>200L</option>
+          <option>300L</option>
+          <option>400L</option>
+          <option>500L</option>
+        </select>
+
+        <label>5. Faculty:</label>
+        <select name="faculty" id="faculty" required>
+          <option value="">-- Select Faculty --</option>
+          <option>Faculty of Science</option>
+          <option>Faculty of Social Sciences</option>
+          <option>Faculty of Engineering</option>
+          <option>Faculty of Education</option>
+          <option>Faculty of Management Sciences</option>
+          <option>Faculty of Arts</option>
+          <option>Faculty of Law</option>
+          <option>Faculty of Health Sciences</option>
+          <option>Faculty of Agriculture</option>
+          <option>Faculty of Environmental Studies</option>
+        </select>
+
+        <label>6. Department:</label>
+        <select name="department" id="department" required>
+          <option value="">-- Select Department --</option>
+        </select>
+
+        <label>7. Do you live on campus?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="onCampus" value="Yes"> Yes</label>
+          <label><input type="radio" name="onCampus" value="No"> No</label>
+        </div>
+      </section>
+
+      <!-- SECTION B -->
+      <section>
+        <h3>Section B: Nutrition and Eating Habits</h3>
+
+        <label>8. How many meals do you eat per day?</label>
+        <select name="mealsPerDay" required>
+          <option value="">-- Select --</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>More than 3</option>
+        </select>
+
+        <label>9. How often do you eat breakfast?</label>
+        <select name="breakfast" required>
+          <option value="">-- Select --</option>
+          <option>Daily</option>
+          <option>Occasionally</option>
+          <option>Rarely</option>
+          <option>Never</option>
+        </select>
+
+        <label>10. How often do you eat balanced meals?</label>
+        <select name="balancedMeals" required>
+          <option value="">-- Select --</option>
+          <option>Always</option>
+          <option>Sometimes</option>
+          <option>Rarely</option>
+          <option>Never</option>
+        </select>
+
+        <label>11. How frequently do you consume junk food?</label>
+        <select name="junkFood" required>
+          <option value="">-- Select --</option>
+          <option>Daily</option>
+          <option>Few times a week</option>
+          <option>Occasionally</option>
+          <option>Never</option>
+        </select>
+
+        <label>12. How often do you drink water daily?</label>
+        <select name="waterIntake" required>
+          <option value="">-- Select --</option>
+          <option>Less than 1L</option>
+          <option>1–2L</option>
+          <option>3L or more</option>
+        </select>
+      </section>
+
+      <!-- SECTION C -->
+      <section>
+        <h3>Section C: Academic Concentration and Performance</h3>
+
+        <label>13. How many hours do you study per day?</label>
+        <select name="studyHours" required>
+          <option value="">-- Select --</option>
+          <option>Less than 1</option>
+          <option>1–2</option>
+          <option>3–4</option>
+          <option>More than 4</option>
+        </select>
+
+        <label>14. How would you rate your level of concentration during lectures?</label>
+        <select name="concentration" required>
+          <option value="">-- Select --</option>
+          <option>Excellent</option>
+          <option>Good</option>
+          <option>Fair</option>
+          <option>Poor</option>
+        </select>
+
+        <label>15. How often do you feel fatigued or sleepy during class?</label>
+        <select name="fatigue" required>
+          <option value="">-- Select --</option>
+          <option>Always</option>
+          <option>Sometimes</option>
+          <option>Rarely</option>
+          <option>Never</option>
+        </select>
+
+        <label>16. Do you think your eating habits affect your concentration in class?</label>
+        <select name="eatingAffects" required>
+          <option value="">-- Select --</option>
+          <option>Yes</option>
+          <option>No</option>
+          <option>Not sure</option>
+        </select>
+
+        <label>17. How would you rate your overall academic performance?</label>
+        <select name="performance" required>
+          <option value="">-- Select --</option>
+          <option>Excellent</option>
+          <option>Good</option>
+          <option>Average</option>
+          <option>Poor</option>
+        </select>
+      </section>
+
+      <button type="submit">Submit</button>
+      <p id="msg"></p>
+    </form>
+  </div>
+
+  <script>
+    const departments = {
+      "Faculty of Science": ["Mathematics", "Statistics", "Biochemistry", "Computer Science", "Physics", "Chemistry", "Microbiology"],
+      "Faculty of Social Sciences": ["Economics", "Sociology", "Political Science", "Psychology", "Geography"],
+      "Faculty of Engineering": ["Civil Engineering", "Electrical Engineering", "Mechanical Engineering", "Chemical Engineering", "Computer Engineering"],
+      "Faculty of Education": ["Educational Management", "Guidance & Counselling", "Curriculum Studies", "Adult Education"],
+      "Faculty of Management Sciences": ["Accounting", "Banking & Finance", "Business Administration", "Marketing", "Public Administration"],
+      "Faculty of Arts": ["English", "History", "Philosophy", "Religious Studies", "Linguistics"],
+      "Faculty of Law": ["Law"],
+      "Faculty of Health Sciences": ["Nursing", "Physiotherapy", "Medical Laboratory Science", "Public Health"],
+      "Faculty of Agriculture": ["Animal Science", "Crop Science", "Agricultural Economics", "Soil Science"],
+      "Faculty of Environmental Studies": ["Architecture", "Quantity Surveying", "Estate Management", "Urban & Regional Planning"]
+    };
+
+    const facultySelect = document.getElementById("faculty");
+    const deptSelect = document.getElementById("department");
+
+    facultySelect.addEventListener("change", () => {
+      const selectedFaculty = facultySelect.value;
+      deptSelect.innerHTML = "<option value=''>-- Select Department --</option>";
+      if (departments[selectedFaculty]) {
+        departments[selectedFaculty].forEach(dep => {
+          const opt = document.createElement("option");
+          opt.value = dep;
+          opt.textContent = dep;
+          deptSelect.appendChild(opt);
+        });
+      }
+    });
+
+    const form = document.getElementById("surveyForm");
+    const msg = document.getElementById("msg");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      const formData1 = new FormData();
+
+      // Replace these entry IDs with your actual Google Form IDs
+      formData1.append('entry.60756817', data.name);
+      formData1.append('entry.1078090955', data.gender);
+      formData1.append('entry.597293994', data.age);
+      formData1.append('entry.48406837', data.level);
+      formData1.append('entry.1163021543', data.faculty);
+      formData1.append('entry.143995883', data.department);
+      formData1.append('entry.1361830756', data.onCampus);
+      formData1.append('entry.458005638', data.mealsPerDay);
+      formData1.append('entry.1883450918', data.breakfast);
+      formData1.append('entry.1854645385', data.balancedMeals);
+      formData1.append('entry.762943820', data.junkFood);
+      formData1.append('entry.1107075631', data.waterIntake);
+      formData1.append('entry.655608068', data.studyHours);
+      formData1.append('entry.217563978', data.concentration);
+      formData1.append('entry.1750289362', data.fatigue);
+      formData1.append('entry.975416480', data.eatingAffects);
+      formData1.append('entry.1432466482', data.performance);
+
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSd8JdQuV8zHtDVB1EO_WiCfTXQfWFon84xnnazvvAqVPOfm_Q/formResponse", {
+        method: "POST",
+        mode: "no-cors",
+        body: formData1
+      }).then(() => {
+        msg.textContent = "✅ Thank you! Your response has been recorded.";
+        form.reset();
+      }).catch(() => {
+        msg.textContent = "❌ Submission failed. Try again.";
+      });
+    });
+  </script>
+</body>
+</html>
